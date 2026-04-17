@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DermoElite — The future of cosmetic commerce and professional beauty education. App coming soon." />
+  <title>DermoElite — Beauty. Redefined.</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Handle redirect from 404.html for GitHub Pages SPA routing
+    (function() {
+      const redirect = sessionStorage.getItem('redirectPath');
+      if (redirect) {
+        sessionStorage.removeItem('redirectPath');
+        window.history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231a1a1a'/><text y='24' x='4' font-size='22' font-family='serif' fill='%23b8956a'>D</text></svg>" />
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <nav>
+    <a href="/" class="logo" data-page="home" aria-label="DermoElite Home">
+      <div class="logo-mark"></div>
+      <div class="logo-text">
+        <span class="logo-name">DermoElite</span>
+        <span class="logo-sub">Beauty · Commerce · Education</span>
+      </div>
+    </a>
+    <button class="burger" id="burger" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ═══════════════ MENU OVERLAY ═══════════════ -->
+<div class="menu-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <div class="menu-panel">
+    <ul class="menu-links">
+      <li><a href="/" data-page="home">Home <span class="arrow">→</span></a></li>
+      <li><a href="/about" data-page="about">About Us <span class="arrow">→</span></a></li>
+      <li><a href="/contact" data-page="contact">Contact <span class="arrow">→</span></a></li>
+      <li><a href="/faq" data-page="faq">FAQ <span class="arrow">→</span></a></li>
+      <li><a href="/policy" data-page="policy">Privacy Policy <span class="arrow">→</span></a></li>
+    </ul>
+    <div class="menu-footer">
+      <p>DermoElite Sp. z o.o.<br>Warsaw, Poland · 2025</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ APP STORE MODAL ═══════════════ -->
+<div class="modal-overlay" id="appModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-box">
+    <div class="modal-icon">⏳</div>
+    <h3>Coming Soon</h3>
+    <p>The DermoElite app is currently under development. We're working hard to bring you the best cosmetic shopping and education experience. Stay tuned — it will be worth the wait.</p>
+    <button class="modal-close" id="modalClose">Got it</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: HOME
+════════════════════════════════════════════════ -->
+<div class="page" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <p class="hero-eyebrow">Introducing DermoElite</p>
+    <h1>Beauty,<br><em>Reimagined</em></h1>
+    <p class="hero-tagline">One platform for premium cosmetics shopping and professional beauty education. The future of skin care is arriving soon.</p>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      Application Under Development
+    </div>
+    <div class="app-buttons">
+      <button class="app-btn" aria-label="Download on the App Store">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.74M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <div class="app-btn-text">
+          <span class="app-btn-pre">Download on the</span>
+          <span class="app-btn-name">App Store</span>
+        </div>
+      </button>
+      <button class="app-btn" aria-label="Get it on Google Play">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3,20.5v-17c0-0.83,0.94-1.3,1.6-0.8l14,8.5c0.6,0.37,0.6,1.23,0,1.6l-14,8.5C3.94,21.8,3,21.33,3,20.5z"/>
+        </svg>
+        <div class="app-btn-text">
+          <span class="app-btn-pre">Get it on</span>
+          <span class="app-btn-name">Google Play</span>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <div class="section reveal">
+    <p class="section-eyebrow">What We're Building</p>
+    <h2 class="section-title">A Complete Beauty<br>Ecosystem</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">DermoElite merges curated cosmetics retail with professional skincare education into one seamless experience.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>Cosmetics Marketplace</h3>
+        <p>Discover and purchase carefully curated skincare, makeup, and wellness products from leading professional brands — delivered to your door with expert guidance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>Beauty Training Hub</h3>
+        <p>Access professional cosmetic courses, masterclasses, and certifications led by licensed estheticians and dermatologists. Learn techniques used in elite clinics worldwide.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Skin Analysis AI</h3>
+        <p>Our intelligent skin assessment tool analyzes your unique skin type, tone, and concerns — then builds a personalized regimen tailored specifically to you.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <h3>Expert Consultations</h3>
+        <p>Connect directly with certified beauty professionals for one-on-one virtual consultations. Get personalized advice without leaving your home.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">05</div>
+        <h3>Loyalty & Rewards</h3>
+        <p>Every purchase and completed course earns DermoPoints. Redeem for exclusive discounts, early product access, and premium member events.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">06</div>
+        <h3>Community & Reviews</h3>
+        <p>Join a vetted community of beauty enthusiasts and professionals. Share honest reviews, before-and-after journeys, and skincare routines in a trusted space.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-strip reveal">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Premium Brands</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">120+</span>
+        <span class="stat-label">Training Courses</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">80+</span>
+        <span class="stat-label">Expert Instructors</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">2025</span>
+        <span class="stat-label">Launch Year</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section reveal">
+    <p class="section-eyebrow">Development Roadmap</p>
+    <h2 class="section-title">Our Journey<br>to Launch</h2>
+    <div class="divider"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Q1 2025</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>Company Founded</h4>
+          <p>DermoElite Sp. z o.o. officially registered in Warsaw, Poland. Core team assembled.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q2 2025</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>Product Design & UX Research</h4>
+          <p>Extensive user research conducted with beauty professionals and consumers across Europe. App architecture defined.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q3 2025</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>Platform Development</h4>
+          <p>Full-scale engineering begins. Marketplace backend, training platform, and AI skin analysis engine in active development.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Q4 2025</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>Beta Testing</h4>
+          <p>Closed beta launch with select partners and early adopters. Refinement based on real-world feedback.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2026</div>
+        <div class="timeline-line"></div>
+        <div class="timeline-content">
+          <h4>Public Launch 🚀</h4>
+          <p>DermoElite goes live on iOS and Android. Available across the European market with plans for global expansion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter-strip reveal">
+    <h3>Be the First to Know</h3>
+    <p>Sign up for early access and exclusive launch updates.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Your email address" required aria-label="Email address" />
+      <button type="submit" class="btn">Notify Me</button>
+    </form>
+  </div>
+
+  <!-- WHY DERMOELITE -->
+  <div class="section reveal">
+    <p class="section-eyebrow">Why DermoElite</p>
+    <h2 class="section-title">Beauty Without<br>Compromise</h2>
+    <div class="divider"></div>
+
+    <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top:3rem;">
+      <div class="feature-card">
+        <div class="feature-num" style="font-size:32px;">✦</div>
+        <h3>Curated Quality</h3>
+        <p>Every product on our platform passes a rigorous vetting process. No fakes. No fillers. Only professional-grade cosmetics.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num" style="font-size:32px;">✦</div>
+        <h3>Education First</h3>
+        <p>We believe informed consumers make better choices. Our training content is created by certified professionals, not influencers.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num" style="font-size:32px;">✦</div>
+        <h3>Privacy by Design</h3>
+        <p>Your skin data is yours. We use it only to help you — never to sell to third parties. Full GDPR compliance is at our core.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num" style="font-size:32px;">✦</div>
+        <h3>European Standard</h3>
+        <p>Headquartered in Warsaw, built to EU standards of quality, safety, and consumer protection. Shop with confidence.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: ABOUT
+════════════════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <div class="page-hero">
+    <p class="hero-eyebrow">Our Story</p>
+    <h1 class="section-title">About<br><em style="font-style:italic; color:var(--gold)">DermoElite</em></h1>
+    <p class="hero-tagline">A Polish beauty tech company on a mission to democratize access to premium cosmetics and professional skincare knowledge.</p>
+  </div>
+
+  <div class="section">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-visual-box">
+          <div class="about-monogram">DE</div>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-year">2025</span>
+          <div class="about-badge-label">Founded in Warsaw</div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="section-eyebrow">Our Mission</p>
+        <h2 class="section-title" style="font-size:clamp(28px,4vw,44px)">Elevating Beauty,<br>Empowering People</h2>
+        <div class="divider"></div>
+        <p style="color:var(--mid); margin-bottom:1.2rem; font-size:15px; line-height:1.8;">DermoElite was born from a simple but powerful conviction: everyone deserves access to professional-grade beauty products and the knowledge to use them well. Too often, the world of premium skincare is locked behind salon doors or hidden in jargon-filled brochures.</p>
+        <p style="color:var(--mid); margin-bottom:1.2rem; font-size:15px; line-height:1.8;">We're changing that. Our platform brings together a curated marketplace of verified cosmetic brands, a comprehensive library of professional training courses, and intelligent tools that personalize every step of your skincare journey.</p>
+        <p style="color:var(--mid); font-size:15px; line-height:1.8;">Based in Warsaw and built for Europe — and eventually the world — DermoElite Sp. z o.o. is registered under Polish law with a commitment to transparency, quality, and the highest standards of data protection.</p>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <div style="margin-top:6rem;" class="reveal">
+      <p class="section-eyebrow">Our Values</p>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,44px)">What We Stand For</h2>
+      <div class="divider"></div>
+      <div class="values-list" style="max-width:700px;">
+        <div class="value-item">
+          <div class="value-icon">⚗</div>
+          <div>
+            <h4>Scientific Integrity</h4>
+            <p>Every claim on our platform is evidence-based. We don't sell hope — we sell results backed by dermatological science.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🌿</div>
+          <div>
+            <h4>Sustainable Beauty</h4>
+            <p>We actively prioritize brands committed to clean ingredients, ethical sourcing, and eco-conscious packaging.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🔐</div>
+          <div>
+            <h4>Privacy First</h4>
+            <p>Your personal and biometric data is handled with the strictest confidentiality. GDPR compliance is non-negotiable.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🎓</div>
+          <div>
+            <h4>Education Over Sales</h4>
+            <p>An informed customer is our best customer. We invest in education because knowledge is the foundation of great skin.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🤝</div>
+          <div>
+            <h4>Inclusive Excellence</h4>
+            <p>Beauty is for everyone. Our platform is designed to serve all skin types, tones, ages, and backgrounds equally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEAM -->
+    <div style="margin-top:6rem;" class="reveal">
+      <p class="section-eyebrow">The Team</p>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,44px)">Built by Experts</h2>
+      <div class="divider"></div>
+      <p style="color:var(--mid); max-width:600px; font-size:15px; line-height:1.8; margin-bottom:3rem;">Our founding team brings together expertise in dermatology, e-commerce technology, UX design, and consumer brand building. We are passionate about beauty and obsessed with the user experience.</p>
+      <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+        <div class="feature-card">
+          <div class="feature-num" style="font-size:28px; margin-bottom:0.5rem;">👩‍⚕️</div>
+          <h3>Medical & Science</h3>
+          <p>Board-certified dermatologists and cosmetologists who review every product and course on our platform.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num" style="font-size:28px; margin-bottom:0.5rem;">💻</div>
+          <h3>Technology</h3>
+          <p>Senior engineers from European tech companies building a platform that is fast, secure, and beautifully simple.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num" style="font-size:28px; margin-bottom:0.5rem;">✦</div>
+          <h3>Beauty & Commerce</h3>
+          <p>Industry veterans with decades of experience in luxury cosmetics, retail, and brand management across Europe.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /page-about -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: CONTACT
+════════════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <p class="hero-eyebrow">Get in Touch</p>
+    <h1 class="section-title">Contact<br><em style="font-style:italic; color:var(--gold)">Us</em></h1>
+    <p class="hero-tagline">We'd love to hear from you — whether you're a brand partner, investor, press, or future user.</p>
+  </div>
+
+  <div class="section">
+    <div class="contact-layout">
+
+      <!-- INFO -->
+      <div class="reveal">
+        <div class="info-block">
+          <div class="info-label">Registered Office</div>
+          <address>
+            DermoElite Sp. z o.o.<br>
+            ul. Grójecka 194/U12<br>
+            02-390 Warszawa<br>
+            Poland
+          </address>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Legal Information</div>
+          <p>
+            <strong>NIP:</strong> 7010995181<br>
+            <strong>KRS:</strong> 0000856786<br>
+            <strong>REGON:</strong> Available on request<br>
+            <strong>Legal form:</strong> Spółka z ograniczoną odpowiedzialnością
+          </p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Email</div>
+          <p>
+            General: <a href="mailto:legal@dermoelite-app.com">legal@dermoelite-app.com</a><br>
+            Press: <a href="mailto:press@dermoelite-app.com">press@dermoelite-app.com</a><br>
+            Partnerships: <a href="mailto:partners@dermoelite-app.com">partners@dermoelite-app.com</a>
+          </p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Response Time</div>
+          <p>We aim to respond to all enquiries within 2–3 business days. For urgent legal matters, please include "URGENT" in your subject line.</p>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="reveal">
+        <p class="section-eyebrow">Send a Message</p>
+        <h2 class="section-title" style="font-size:clamp(26px,3vw,38px); margin-bottom:2rem;">We're Listening</h2>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" required placeholder="Anna" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" required placeholder="Kowalska" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="anna@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject">
+              <option value="">Select a topic…</option>
+              <option>Brand Partnership</option>
+              <option>Press & Media</option>
+              <option>Investor Relations</option>
+              <option>General Enquiry</option>
+              <option>Legal Matter</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" required placeholder="Tell us about your enquiry…"></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message →</button>
+          <div class="form-success" id="formSuccess">
+            <p>✓ Message received. We'll be in touch within 2–3 business days.</p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div><!-- /page-contact -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: POLICY
+════════════════════════════════════════════════ -->
+<div class="page" id="page-policy">
+  <div class="page-hero">
+    <p class="hero-eyebrow">Legal</p>
+    <h1 class="section-title">Privacy<br><em style="font-style:italic; color:var(--gold)">Policy</em></h1>
+    <p class="hero-tagline">How we collect, use, and protect your personal information.</p>
+  </div>
+
+  <div class="section">
+    <div class="policy-content reveal">
+      <span class="policy-update">Last Updated: January 2025</span>
+
+      <h2>1. Controller Information</h2>
+      <p>The data controller is DermoElite Spółka z ograniczoną odpowiedzialnością (DermoElite Sp. z o.o.), registered at ul. Grójecka 194/U12, 02-390 Warszawa, Poland. NIP: 7010995181, KRS: 0000856786. You may contact us regarding data protection matters at: <a href="mailto:legal@dermoelite-app.com" style="color:var(--gold);">legal@dermoelite-app.com</a></p>
+
+      <h2>2. Data We Collect</h2>
+      <p>We may collect the following categories of personal data:</p>
+      <ul>
+        <li><strong>Identity Data:</strong> name, username, date of birth</li>
+        <li><strong>Contact Data:</strong> email address, postal address, phone number</li>
+        <li><strong>Technical Data:</strong> IP address, device identifiers, browser type, operating system</li>
+        <li><strong>Usage Data:</strong> pages visited, features used, course progress, purchase history</li>
+        <li><strong>Profile Data:</strong> skin type preferences, product interests, survey responses</li>
+        <li><strong>Biometric Indicators:</strong> skin analysis data submitted voluntarily via the app (anonymized and encrypted)</li>
+      </ul>
+
+      <h2>3. Legal Basis for Processing</h2>
+      <p>We process your personal data on the following legal grounds under GDPR (Regulation (EU) 2016/679):</p>
+      <ul>
+        <li><strong>Performance of a contract</strong> — to provide the services you signed up for</li>
+        <li><strong>Legitimate interests</strong> — to improve our platform, ensure security, and prevent fraud</li>
+        <li><strong>Consent</strong> — for marketing communications and optional skin analysis features</li>
+        <li><strong>Legal obligation</strong> — to comply with applicable Polish and EU law</li>
+      </ul>
+
+      <h2>4. How We Use Your Data</h2>
+      <p>Your data is used to: operate and improve the DermoElite platform; personalize product and course recommendations; process transactions and subscriptions; send service and marketing communications (with your consent); detect and prevent fraudulent or abusive activity; comply with legal obligations.</p>
+
+      <h2>5. Data Sharing</h2>
+      <p>We do not sell your personal data. We may share data with trusted third-party service providers who assist in platform operations (payment processors, cloud hosting, analytics) under strict data processing agreements. All third parties are required to respect the security of your data and to treat it in accordance with the law.</p>
+
+      <h2>6. International Transfers</h2>
+      <p>Where data is transferred outside the European Economic Area, we ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by the European Commission.</p>
+
+      <h2>7. Data Retention</h2>
+      <p>We retain personal data for as long as necessary to fulfill the purposes for which it was collected, or as required by applicable law. Account data is typically retained for the duration of your account plus 3 years for legal purposes.</p>
+
+      <h2>8. Your Rights</h2>
+      <p>Under GDPR, you have the right to: access your personal data; correct inaccurate data; request erasure ("right to be forgotten"); restrict or object to processing; data portability; withdraw consent at any time. To exercise any of these rights, contact us at <a href="mailto:legal@dermoelite-app.com" style="color:var(--gold);">legal@dermoelite-app.com</a>. You also have the right to lodge a complaint with the Polish supervisory authority (UODO) at <a href="https://uodo.gov.pl" style="color:var(--gold);" target="_blank" rel="noopener">uodo.gov.pl</a>.</p>
+
+      <h2>9. Cookies</h2>
+      <p>Our website uses essential cookies required for operation, and optional analytics cookies to understand usage patterns. You may control cookie preferences through your browser settings. A detailed cookie policy will be available at app launch.</p>
+
+      <h2>10. Security</h2>
+      <p>We implement appropriate technical and organizational measures to protect your data against unauthorized access, alteration, disclosure, or destruction. These include SSL/TLS encryption, access controls, and regular security assessments.</p>
+
+      <h2>11. Children's Privacy</h2>
+      <p>Our services are not directed to individuals under the age of 16. We do not knowingly collect personal data from children. If you believe a child has provided us with personal data, please contact us immediately.</p>
+
+      <h2>12. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new policy on this page with an updated effective date. We encourage you to review this policy periodically.</p>
+    </div>
+  </div>
+</div><!-- /page-policy -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE: FAQ
+════════════════════════════════════════════════ -->
+<div class="page" id="page-faq">
+  <div class="page-hero">
+    <p class="hero-eyebrow">Help Center</p>
+    <h1 class="section-title">Frequently Asked<br><em style="font-style:italic; color:var(--gold)">Questions</em></h1>
+    <p class="hero-tagline">Everything you need to know about DermoElite — the app, the company, and what's coming.</p>
+  </div>
+
+  <div class="section">
+    <div style="max-width:760px; margin:0 auto;">
+
+      <div class="reveal">
+        <p class="section-eyebrow">About the App</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">When will the DermoElite app launch? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>We are targeting a public launch in 2026, following a closed beta phase in late 2025. Sign up to our newsletter to be notified the moment early access opens. We'll be launching simultaneously on iOS (App Store) and Android (Google Play).</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Which countries will the app be available in? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>At launch, DermoElite will be available across the European Union, with a focus on Poland, Germany, France, and the Netherlands. Expansion to additional markets including the United Kingdom and North America is planned for subsequent phases.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Will the app be free to download? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Yes, the DermoElite app will be free to download. The marketplace is open to all users. Premium training courses and advanced features such as AI skin analysis and expert consultations will be available under subscription or pay-per-use models. Pricing details will be announced before launch.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How does the skin analysis feature work? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Our AI-powered skin analysis uses your device's camera and a series of guided prompts to evaluate your skin's characteristics — including hydration levels, tone uniformity, pore visibility, and sensitivity indicators. The results are processed on-device where possible, with your explicit consent required before any data is transmitted. Analysis data is never shared with third parties or used for advertising purposes.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:3rem;">
+        <p class="section-eyebrow">Products & Brands</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">How are products selected for the marketplace? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Every brand and product undergoes a thorough vetting process. Our team of dermatologists and cosmetic scientists review ingredient lists, safety certifications, and clinical evidence before any product is approved. We do not list products with prohibited substances under EU Cosmetics Regulation No 1223/2009.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Can I apply to list my brand on DermoElite? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Yes. We welcome applications from professional cosmetic brands that meet our quality standards. Please contact us at <a href="mailto:partners@dermoelite-app.com" style="color:var(--gold);">partners@dermoelite-app.com</a> with your brand information, product documentation, and any relevant certifications. Our partnerships team will respond within 5 business days.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Are products authentic and verified? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Absolutely. We work exclusively with authorized distributors and brand-direct partnerships. Each product listing includes batch traceability, and our team conducts periodic spot checks. Counterfeit goods have no place on our platform — any suspected authenticity issue is investigated immediately.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:3rem;">
+        <p class="section-eyebrow">Training & Education</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">Who creates the training content? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>All courses are created and reviewed by licensed professionals — including licensed estheticians, certified cosmetologists, and consultant dermatologists. We do not accept content from unverified influencers or anonymous sources. Every instructor profile is verified and publicly displayed on the platform.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Do I receive a certificate upon completing a course? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>Yes. Upon successful completion of accredited courses, you will receive a digital DermoElite Certificate of Completion. For certain professional programs, certificates will carry continuing education credits recognized within the EU beauty industry. Details will be available on each course listing at launch.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">I'm a beauty professional — can I teach on DermoElite? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>We are building an instructor community and welcome applications from qualified professionals. Contact us at <a href="mailto:partners@dermoelite-app.com" style="color:var(--gold);">partners@dermoelite-app.com</a> with your credentials, area of expertise, and a brief description of the course you'd like to offer. Our editorial team will review your application and guide you through the onboarding process.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:3rem;">
+        <p class="section-eyebrow">Data & Privacy</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">How does DermoElite handle my personal data? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>We take data privacy very seriously. DermoElite is fully GDPR-compliant and operated under Polish law. Your personal data is never sold. We collect only what is necessary to provide our services, and you have full rights over your data at all times. Please see our <a data-page="policy" href="/policy" style="color:var(--gold); cursor:pointer;">Privacy Policy</a> for complete details.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How can I delete my account and data? <span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>You may request deletion of your account and associated data at any time. Once the app launches, this will be available directly within account settings. You may also submit a deletion request to <a href="mailto:legal@dermoelite-app.com" style="color:var(--gold);">legal@dermoelite-app.com</a>. We will process your request within 30 days in accordance with GDPR Article 17.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:4rem; padding:3rem; border:1px solid var(--border); background:var(--cream); text-align:center;">
+        <p class="section-eyebrow">Still have questions?</p>
+        <h3 class="section-title" style="font-size:28px; margin-bottom:0.5rem;">We're Here to Help</h3>
+        <p style="color:var(--mid); font-size:14px; margin-bottom:2rem;">Our team typically responds within 2–3 business days.</p>
+        <a href="/contact" data-page="contact" class="btn">Contact Us →</a>
+      </div>
+
+    </div>
+  </div>
+</div><!-- /page-faq -->
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="footer-logo-name">DermoElite</span>
+        <span class="footer-logo-sub">Beauty · Commerce · Education</span>
+        <p>A Polish beauty technology company building the future of cosmetics shopping and professional skin education.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Registered Office</h4>
+        <address>
+          DermoElite Sp. z o.o.<br>
+          ul. Grójecka 194/U12<br>
+          02-390 Warszawa, Poland
+        </address>
+        <div style="margin-top:1rem;">
+          <span style="font-size:12px; display:block; line-height:2;">NIP: 7010995181</span>
+          <span style="font-size:12px; display:block; line-height:2;">KRS: 0000856786</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a data-page="home" href="/">Home</a>
+        <a data-page="about" href="/about">About Us</a>
+        <a data-page="contact" href="/contact">Contact</a>
+        <a data-page="faq" href="/faq">FAQ</a>
+        <a data-page="policy" href="/policy">Privacy Policy</a>
+        <div style="margin-top:1rem;">
+          <h4 style="margin-top:0; margin-bottom:0.5rem;">Email</h4>
+          <a href="mailto:legal@dermoelite-app.com">legal@dermoelite-app.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <strong>DERMOELITE SP Z O O</strong>
+        © 2025 DermoElite Sp. z o.o. All rights reserved.
+      </div>
+      <div class="footer-legal-links">
+        <a data-page="policy" href="/policy">Privacy Policy</a>
+        <a data-page="faq" href="/faq">FAQ</a>
+        <a href="mailto:legal@dermoelite-app.com">Legal Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
